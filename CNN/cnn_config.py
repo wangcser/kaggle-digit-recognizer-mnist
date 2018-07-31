@@ -10,7 +10,7 @@ RESULT_PATH = os.path.join(DATA_PATH, 'result')
 
 # net parameters
 
-EPOCHS = 30
+EPOCHS = 300
 BATCH_SIZE = 64
 
 # tf log level

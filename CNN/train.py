@@ -5,7 +5,7 @@ from keras.optimizers import RMSprop
 from keras.callbacks import ReduceLROnPlateau
 from keras.preprocessing.image import ImageDataGenerator
 
-from load_data.init import Load_data
+from data_set.data_transform import Load_data, Load_full_data
 from CNN.cnn_model import CNN_model
 import CNN.cnn_config as cfg
 
@@ -15,12 +15,15 @@ class Solver(object):
     def __init__(self, model, data):
 
         self.data = data
-        self.x_train, self.y_train, self.x_val, self.y_val = self.data.format_train_data()
+        self.x_train, self.y_train, self.x_val, self.y_val = self.data.load_mnist('train')
         self.model = model
         self.epochs = cfg.EPOCHS
         self.batch_size = cfg.BATCH_SIZE
 
-        self.test = self.data.format_test_data()
+        test = pd.read_csv('/media/super/Dev Data/ml_data_set/Kaggle_MNIST/test.csv')
+        test = test / 255.0
+        self.test = test.values.reshape(-1, 28, 28, 1)
+
         self.result_path = cfg.RESULT_PATH
 
         # data argumentation
@@ -82,16 +85,17 @@ class Solver(object):
         plt.show()
 
     def test(self):
+
         pass
 
 
-
 def main():
-
     model = CNN_model()
-    data_set = Load_data()
+    # data_set = Load_data()
+    data_set = Load_full_data()
 
     solver = Solver(model.build(), data_set)
+
     solver.train()
 
 

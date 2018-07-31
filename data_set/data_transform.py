@@ -10,9 +10,6 @@ from sklearn.model_selection import train_test_split
 from keras.utils.np_utils import to_categorical
 import data_set.data_config as cfg
 
-import matplotlib.pyplot as plt
-
-np.random.seed(2) # the random is not the true random!!!
 
 class Load_data(object):
     #
@@ -48,11 +45,12 @@ class Load_data(object):
 
             # split training and validation set
 
-            random_seed = 2
+            random_seed = 5
             # split
             X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.1, random_state=random_seed)
 
             return X_train, y_train, X_val, y_val
+
         else:
             test = pd.read_csv(self.data_path + "/test.csv")
             test = test / 255.0
@@ -118,9 +116,9 @@ class Load_full_data(object):
             test = test / 255.0
             test = test.reshape(-1, 28, 28, 1)
 
-        # return np.ndarray
-        # print(images.shape, labels.size)
-        return test
+            # return np.ndarray
+            # print(images.shape, labels.size)
+            return test
 
 
 def main():
