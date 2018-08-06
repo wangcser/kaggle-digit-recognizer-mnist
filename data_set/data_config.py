@@ -1,13 +1,11 @@
 import os
 
 
-# sample data path
+DATA_SET_PATH = '/media/super/Dev Data/ml_data_set/Kaggle_MNIST'
 
-DATA_PATH = '/media/super/Dev Data/ml_data_set/Kaggle_MNIST'
+# sample data path
+DATA_PATH = os.path.join(DATA_SET_PATH, 'data')
 DATA_CACHE_PATH = os.path.join(DATA_PATH, 'cache')
-WEIGHT_PATH = os.path.join(DATA_PATH, 'weight')
-RESULT_PATH = os.path.join(DATA_PATH, 'result')
 
 # full data path
-
-FULL_DATA_PATH = '/media/super/Dev Data/ml_data_set/Kaggle_MNIST/full_data'
+FULL_DATA_PATH = os.path.join(DATA_PATH, 'full_data')

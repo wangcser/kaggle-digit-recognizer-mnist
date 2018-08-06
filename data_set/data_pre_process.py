@@ -24,32 +24,30 @@ class Load_data(object):
         # load data as pandas format - df
         self.data_path = cfg.DATA_PATH
 
-    def load_mnist(self, kind='train'):
+    def load_mnist(self, kind='train', split_val=False):
         if kind == 'train':
             train = pd.read_csv(self.data_path + "/train.csv")
-
             y_train = train["label"]
-
             # drop 'label' column
             X_train = train.drop(labels=["label"], axis=1)
             del train   # free space
-
             # normalize the data
             X_train = X_train / 255.0
-
             # reshape image in 3-d: 28*28*1
             X_train = X_train.values.reshape(-1, 28, 28, 1)
-
             # encode label to one-hot vector
             y_train = to_categorical(y_train, num_classes=10)
 
-            # split training and validation set
+            if split_val is True:
+                # split training and validation set
+                random_seed = 5
+                X_train, X_val, y_train, y_val = train_test_split(X_train, y_train,
+                                                                  test_size=0.1, random_state=random_seed)
 
-            random_seed = 5
-            # split
-            X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.1, random_state=random_seed)
+                return X_train, y_train, X_val, y_val
+            else:
 
-            return X_train, y_train, X_val, y_val
+                return X_train, y_train
 
         else:
             test = pd.read_csv(self.data_path + "/test.csv")
@@ -77,7 +75,7 @@ class Load_full_data(object):
         self.test_images_path = os.path.join(self.data_path, 't10k-images.idx3-ubyte')
         self.test_labels_path = os.path.join(self.data_path, 't10k-labels.idx1-ubyte')
 
-    def load_mnist(self, kind='train'):
+    def load_mnist(self, kind='train', split_val=False):
         if kind == 'train':
             with open(self.train_labels_path, 'rb') as lbpath:
                 magic, n = struct.unpack('>II', lbpath.read(8))
@@ -89,19 +87,22 @@ class Load_full_data(object):
 
             # normalize the data
             X_train = X_train / 255.0
-
             # reshape image in 3-d: 28*28*1
             X_train = X_train.reshape(-1, 28, 28, 1)
-
             # encode label to one-hot vector
             y_train = to_categorical(y_train, num_classes=10)
 
-            # split training and validation set
-            random_seed = 2
-            # split
-            X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.1, random_state=random_seed)
+            if split_val is True:
+                # split training and validation set
+                random_seed = 2
+                # split
+                X_train, X_val, y_train, y_val = train_test_split(X_train, y_train,
+                                                                  test_size=0.1, random_state=random_seed)
 
-            return X_train, y_train, X_val, y_val
+                return X_train, y_train, X_val, y_val
+            else:
+
+                return X_train, y_train
 
         else:
             # use the test label when cal the accurate.
@@ -116,22 +117,38 @@ class Load_full_data(object):
             test = test / 255.0
             test = test.reshape(-1, 28, 28, 1)
 
-            # return np.ndarray
-            # print(images.shape, labels.size)
             return test
 
 
-def main():
+def use_comp_test():
+    test = pd.read_csv(cfg.DATA_PATH + "/test.csv")
+    test = test / 255.0
+    test = test.values.reshape(-1, 28, 28, 1)
 
+    return test
+
+
+def main():
     data = Load_data()
-    X_train, y_train, X_val, y_val = data.load_mnist('train')
+    full_data = Load_full_data()
+    """
+    X_train, y_train, X_val, y_val = data.load_mnist('train', True)
     test = data.load_mnist('test')
     print(X_train.shape, y_train.shape, X_val.shape, test.shape)
+    """
+    X_train, y_train = data.load_mnist('train', False)
+    test = data.load_mnist('test')
+    print(X_train.shape, y_train.shape, test.shape)
 
-    full_data = Load_full_data()
-    X_train, y_train, X_val, y_val = full_data.load_mnist('train')
+    """
+    
+    X_train, y_train, X_val, y_val = full_data.load_mnist('train', True)
     test = full_data.load_mnist('test')
     print(X_train.shape, y_train.shape, X_val.shape, test.shape)
+    """
+    X_train, y_train = full_data.load_mnist('train', False)
+    test = full_data.load_mnist('test')
+    print(X_train.shape, y_train.shape, test.shape)
 
 
 if __name__ == '__main__':

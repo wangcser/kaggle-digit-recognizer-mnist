@@ -3,12 +3,12 @@
 #
 
 import matplotlib.pyplot as plt
-from data_set.data_transform import Load_data, Load_full_data
+from data_set.data_pre_process import Load_data, Load_full_data
 
 
 def main():
     data = Load_data()
-    X_train, y_train, X_val, y_val = data.load_mnist('train')
+    X_train, y_train, X_val, y_val = data.load_mnist('train', split_val=True)
     test = data.load_mnist('test')
     # print(X_train.shape, y_train.shape, X_val.shape, test.shape)
 
@@ -23,6 +23,7 @@ def main():
     ax[0].set_yticks([])
     plt.tight_layout()
     plt.show()
+
 
 if __name__ == '__main__':
     main()
