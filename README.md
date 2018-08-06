@@ -1,4 +1,4 @@
-# The Hello World to Machine Learning 
+# A nerual methods towards MNIST 
 
 I introduced multi inplements in solving MINST task, as the base fandement to ML learning.
 
@@ -10,4 +10,11 @@ I introduced multi inplements in solving MINST task, as the base fandement to ML
 
 ## Todo
 
-- write the test code.
+
+
+## Project structure
+
+- data_set
+- utils
+- models
+- results
