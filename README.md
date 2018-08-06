@@ -18,3 +18,11 @@ I introduced multi inplements in solving MINST task, as the base fandement to ML
 - utils
 - models
 - results
+
+
+
+## conclusion
+
+
+
+BN plays better than the dropout methods.
