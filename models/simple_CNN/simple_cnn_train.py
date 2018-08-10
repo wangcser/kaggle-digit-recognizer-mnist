@@ -9,7 +9,7 @@ from keras.models import load_model
 
 from data_set.data_pre_process import Load_full_data, use_comp_test
 from models.simple_CNN.simple_cnn_model import NN_model
-import models.CNN.cnn_config as cfg
+import models.simple_CNN.simple_cnn_config as cfg
 
 
 class Solver(object):
