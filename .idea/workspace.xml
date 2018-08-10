@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12066662-c013-4673-9d5e-0c4cb022adb6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CNN/cnn_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CNN/cnn_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CNN/cnn_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CNN/cnn_model.py" afterDir="false" />
-    </list>
+    <list default="true" id="12066662-c013-4673-9d5e-0c4cb022adb6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +38,7 @@
       <file leaf-file-name="cnn_config.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/CNN/cnn_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="440">
               <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -88,9 +84,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
-    <option name="width" value="960" />
+    <option name="width" value="1920" />
     <option name="height" value="988" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -339,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533558502697</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="optimize the file structure">
+      <created>1533559781490</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533559781490</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -354,11 +357,11 @@
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="960" height="988" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.31576172" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31483456" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983682" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.7214452" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42773893" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32867134" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32983682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -583,7 +586,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/CNN/cnn_config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="440">
           <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
