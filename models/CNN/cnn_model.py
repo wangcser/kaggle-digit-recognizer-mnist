@@ -18,7 +18,8 @@ class CNN_model(object):
                          activation=self.activation, input_shape=(28, 28, 1), name='conv1'))
         model.add(Conv2D(filters=32, kernel_size=(5, 5), padding='Same',
                          activation=self.activation, name='conv2'))
-        model.add(MaxPool2D(pool_size=(2, 2), name='maxpool3'))
+        model.add(MaxPool2D(pool_size=(2, 2), name='maxpool3'))    # batch*14*14*32
+
         # model.add(Dropout(self.dropout_rate))
         model.add(
             BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, beta_initializer='zeros',
@@ -31,7 +32,8 @@ class CNN_model(object):
                          activation=self.activation, name='conv4'))
         model.add(Conv2D(filters=32, kernel_size=(3, 3), padding='Same',
                          activation=self.activation, name='conv5'))
-        model.add(MaxPool2D(pool_size=(2, 2), strides=(2, 2), name='maxpool6'))
+        model.add(MaxPool2D(pool_size=(2, 2), strides=(2, 2), name='maxpool6'))    # batch*7*7*32
+
         # model.add(Dropout(self.dropout_rate))
         model.add(
             BatchNormalization(axis=-1, momentum=0.99, epsilon=0.001, center=True, scale=True, beta_initializer='zeros',
@@ -41,9 +43,9 @@ class CNN_model(object):
 
         # fc layer
         model.add(Flatten())
-        model.add(Dense(256, activation=self.activation))
+        model.add(Dense(256, activation=self.activation))    # 256*1
         model.add(Dropout(0.5))
-        model.add(Dense(10, activation='softmax'))
+        model.add(Dense(10, activation='softmax'))    # 10*1
 
         # plot_model(model, to_file=cfg.DATA_PATH + '/model.png')
 

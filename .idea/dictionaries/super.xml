@@ -8,6 +8,7 @@
       <w>mnist</w>
       <w>pred</w>
       <w>relu</w>
+      <w>softmax</w>
       <w>struct</w>
       <w>tensorboard</w>
     </words>

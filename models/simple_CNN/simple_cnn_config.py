@@ -9,13 +9,13 @@ WEIGHT_PATH = os.path.join(data_cfg.DATA_SET_PATH, 'weight')
 CHECK_POINT_PATH = os.path.join(WEIGHT_PATH, 'check_point')
 
 WEIGHT_FILE = os.path.join(CHECK_POINT_PATH, "epoch_{epoch:002d}-valAcc_{val_acc:.4f}.hdf5")
-RESULT_FILE = os.path.join(RESULT_PATH, "cnn_result.csv")
+RESULT_FILE = os.path.join(RESULT_PATH, "simple_cnn_result.csv")
 
 LOG_PATH = os.path.join(data_cfg.DATA_SET_PATH, 'logs')
 # net parameters
 DROPOUT_RATE = 0.25
 ACTIVATION = 'relu'
-EPOCHS = 2
+EPOCHS = 50
 BATCH_SIZE = 64
 
 # tf log level

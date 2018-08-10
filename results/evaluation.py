@@ -1,15 +1,12 @@
 #
-# this module cal the test acc rate.
-# now it can just cal the full data test acc rate.
-#
+# func: this module cal the test acc rate.
 # attention: this module can work will just when the test set is fully released.
 #
 
 import numpy as np
 import pandas as pd
-import os
 import struct
-
+import os
 from data_set import data_config as cfg
 
 

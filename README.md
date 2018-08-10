@@ -1,28 +1,26 @@
-# A nerual methods towards MNIST 
+# A Neural Method for MNIST 
 
-I introduced multi inplements in solving MINST task, as the base fandement to ML learning.
+I test multi inplements in solving MINST task, as the base foundment to DL.
 
 > author: super wang.
 
-## Data set introduce
+## 01 Task intrduction
 
+## 02 Data Analysis 
 
+## 03 Model Selection
 
-## Todo
+## 04 Result Analysis
 
+## 05 conclusion
 
+BN plays better than the dropout methods.
 
-## Project structure
+## 06 Implement Details
+
+Project structure
 
 - data_set
 - utils
 - models
 - results
-
-
-
-## conclusion
-
-
-
-BN plays better than the dropout methods.
