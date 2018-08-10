@@ -15,7 +15,7 @@ LOG_PATH = os.path.join(data_cfg.DATA_SET_PATH, 'logs')
 # net parameters
 DROPOUT_RATE = 0.25
 ACTIVATION = 'relu'
-EPOCHS = 100
+EPOCHS = 5
 BATCH_SIZE = 64
 
 # tf log level

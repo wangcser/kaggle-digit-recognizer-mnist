@@ -6,6 +6,7 @@
       <w>crossentropy</w>
       <w>maxpool</w>
       <w>mnist</w>
+      <w>pred</w>
       <w>relu</w>
       <w>struct</w>
       <w>tensorboard</w>
